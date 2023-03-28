@@ -42,6 +42,20 @@ public class Gaulois {
 		}
 	}
 
+	public void faireUneDonnation(Musee musee) {
+		if (nbTrophees == 0) {
+			parler("Je ne peux pas faire de don au musée car je n'ai pas de trophées.");
+		} else {
+			parler("Je donne au musée tous mes trophées : ");
+			
+			while (nbTrophees != 0) {
+				System.out.println("- " + trophees[nbTrophees-1].toString());
+				musee.donnerTrophees(this,trophees[nbTrophees-1]);
+				nbTrophees -= 1;
+			}
+
+		}
+	}
 	
 	@Override
 	public String toString() {
